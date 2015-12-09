@@ -29,6 +29,13 @@
 				<param name="root">commMap</param>
 			</result>
 		</action>
+		<action name="checkUser" class="com.apartment.user.action.UserAction"
+			method="checkUser">
+			<result type="json">
+				<param name="root">commMap</param>
+			</result>
+		</action>
+
 
 	</package>
 </struts>    

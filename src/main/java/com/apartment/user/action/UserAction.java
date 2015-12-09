@@ -35,6 +35,16 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		return SUCCESS;
 	}
 
+	public String checkUser() {
+		Map<String, Object> session = ActionContext.getContext().getSession();
+		if (session.get("USER_NAME") == null) {
+			commMap.put("isLogin", "false");
+		} else {
+			commMap.put("isLogin", "true");
+		}
+		return SUCCESS;
+	}
+
 	/**
 	 * 登陆
 	 * 

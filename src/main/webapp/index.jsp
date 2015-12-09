@@ -202,7 +202,8 @@ body {
 		}
 	}
 </script>
-
+<script type="text/javascript" src="<%=path%>/v3/js/index.js"
+	charset="utf-8"></script>
 </head>
 <body class="easyui-layout">
 
