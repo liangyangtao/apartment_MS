@@ -1,0 +1,90 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/context/spring-aop-3.0.xsd">
+
+	<context:component-scan base-package="com.apartment" />
+
+	<!-- 获取JDBC配置文件 -->
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:jdbc.properties</value>
+		</property>
+	</bean>
+	<!-- MySql数据源的配置，采用DBCP连接池 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass">
+			<value>${database.driverClassName}</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>${database.url}</value>
+		</property>
+		<property name="user">
+			<value>${database.username}</value>
+		</property>
+		<property name="password">
+			<value>${database.password}</value>
+		</property>
+		<property name="minPoolSize">
+			<value>${database.minPoolSize}</value>
+		</property>
+		<property name="maxPoolSize">
+			<value>${database.maxPoolSize}</value>
+		</property>
+		<property name="initialPoolSize">
+			<value>${database.initialPoolSize}</value>
+		</property>
+		<property name="maxIdleTime">
+			<value>${database.maxIdleTime}</value>
+		</property>
+		<property name="acquireIncrement">
+			<value>${database.acquireIncrement}</value>
+		</property>
+		<property name="acquireRetryAttempts">
+			<value>${database.acquireRetryAttempts}</value>
+		</property>
+		<property name="acquireRetryDelay">
+			<value>${database.acquireRetryDelay}</value>
+		</property>
+		<property name="testConnectionOnCheckin">
+			<value>${database.testConnectionOnCheckin}</value>
+		</property>
+		<property name="automaticTestTable">
+			<value>${database.automaticTestTable}</value>
+		</property>
+		<property name="idleConnectionTestPeriod">
+			<value>${database.idleConnectionTestPeriod}</value>
+		</property>
+		<property name="checkoutTimeout">
+			<value>${database.checkoutTimeout}</value>
+		</property>
+	</bean>
+
+
+	<!-- 事务 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:mybatis.xml" />
+	</bean>
+
+	<!-- scan for mappers and let them be autowired -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- Mapper接口所在包名，Spring会自动查找其下的Mapper -->
+		<property name="basePackage" value="com.apartment.mybatis.mapper" />
+		<!-- <property name="sqlSessionFactory" ref="sqlSessionFactory"></property> -->
+	</bean>
+
+
+</beans>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="user" namespace="/" extends="default">
+
+
+
+		<action name="getAuthcode" class="com.apartment.user.action.AuthCodeAction"
+			method="getAuthcode">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+				<param name="bufferSize">2048</param>
+			</result>
+		</action>
+
+		<action name="checkAuthcode" class="com.apartment.user.action.AuthCodeAction"
+			method="checkAuthcode">
+			<result type="json">
+				<param name="root">isAuthcode</param>
+			</result>
+		</action>
+
+
+		<action name="loginUser" class="com.apartment.user.action.UserAction"
+			method="loginUser">
+			<result type="json">
+				<param name="root">commMap</param>
+			</result>
+		</action>
+
+	</package>
+</struts>    

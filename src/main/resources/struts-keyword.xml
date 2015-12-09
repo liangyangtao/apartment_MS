@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<package name="keyword" namespace="/" extends="default">
+
+
+
+		<action name="readInfoList" class="com.unbank.action.KeywordAction"
+			method="readInfoList">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+		<action name="readInfoLabel" class="com.unbank.action.KeywordAction"
+			method="readInfoLabel">
+			<result type="json">
+				<param name="root">jsonArray</param>
+			</result>
+		</action>
+
+	</package>
+</struts>    

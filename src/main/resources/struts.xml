@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.custom.i18n.resources" value="globalMessages" />
+	<constant name="struts.action.extension" value="action,," />
+
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.ui.templateDir" value="template" />
+	<constant name="struts.multipart.maxSize" value="100000000" />
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+	<constant name="struts.devMode" value="false" />
+
+	<!-- 临时文件目录 -->
+	<constant name="struts.multipart.saveDir" value="tmp"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+
+		<interceptors>
+			<!-- 定义session控制拦截器 -->
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 定义默认拦截器 -->
+		<default-interceptor-ref name="mydefault" />
+
+		<global-results>
+			<!-- 逻辑名为sessionTimeout的结果，映射到/sessionTimeout.jsp页面 -->
+			<result name="sessionTimeout">/sessionTimeout.jsp</result>
+			<result name="error">/errorPage.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
+		</global-exception-mappings>
+
+	</package>
+
+	<include file="struts-user.xml"></include>
+</struts>    

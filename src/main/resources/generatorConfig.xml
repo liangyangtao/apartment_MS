@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+
+		location="E:\maven_repository\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar" />
+	<context id="context1">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://10.0.2.26:3306/apartment?autoReconnect=true&amp;characterEncoding=UTF-8"
+			userId="spider" password="spider" />
+		<javaModelGenerator targetPackage="com.apartment.mybatis.entity"
+			targetProject="apartment_MS/src/main/java" />
+		<sqlMapGenerator targetPackage="com.apartment.mybatis.mapper"
+			targetProject="apartment_MS/src/main/java" />
+		<javaClientGenerator targetPackage="com.apartment.mybatis.mapper"
+			targetProject="apartment_MS/src/main/java" type="XMLMAPPER" />
+
+
+		<table tableName="user" domainObjectName="User">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
+
+	</context>
+</generatorConfiguration>

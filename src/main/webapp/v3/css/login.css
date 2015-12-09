@@ -1,0 +1,63 @@
+body {
+	margin: 0;
+	background: #0d0d0d url(./../images/reg_bg.gif) center 0 repeat-x;
+	font-size: 12px;
+	color: #585858;
+}
+
+ul,form {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+a {
+	color: #777;
+}
+
+#layout {
+	width: 900px;
+	height: 608px;
+	background: url(./../images/login.jpg) 0 0 no-repeat;
+	margin: 30px auto 0 auto;
+}
+
+#reg {
+	padding: 217px 0 0 553px;
+	width: 140px;
+	cursor: default;
+}
+
+#reg ul li {
+	height: 40px;
+}
+
+.input_t {
+	background: transparent;
+	width: 120px;
+	border: none;
+	color: #585858;
+	height: 22px;
+	line-height: 22px;
+}
+
+.input_t1 {
+	background: transparent;
+	width: 65px;
+	border: none;
+	color: #585858;
+	height: 22px;
+	line-height: 22px;
+}
+
+.btn {
+	background: transparent;
+	border: none;
+	width: 81px;
+	height: 26px;
+	cursor: pointer;
+}
+
+.middle * {
+	vertical-align: middle;
+}
