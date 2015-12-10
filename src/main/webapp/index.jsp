@@ -9,7 +9,7 @@
 	HttpSession httpSession = request.getSession();
 
 	Object o_name = httpSession.getAttribute("USER_NAME");
-	if (o_name == null) {
+	/* if (o_name == null) {
 		response.sendRedirect("login.jsp");
 	} else {
 
@@ -22,7 +22,7 @@
 			response.sendRedirect("admin_index.jsp");
 		}
 
-	}
+	} */
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -63,37 +63,86 @@
 		</div>
 	</div>
 
-	<div data-options="region:'west',split:true" title="查询导航"
+	<div data-options="region:'west',split:true" title="学生公寓管理系统"
 		style="width:200px;overflow:hidden;overflow-y:auto;">
 		<div class="easyui-accordion" data-options="fit:true,border:false">
-			<div title="管理一" data-options="iconCls:'icon-save'">
+			<div title="公寓信息管理" data-options="iconCls:'icon-search'">
 				<ul id="nav">
 					<li><a class="easyui-linkbutton"
-						data-options="iconCls:'icon-save'" plain="false"
+						data-options="iconCls:'icon-search'" plain="false"
 						href="javascript:void(0);"
-						onclick="addTab('京东小银票查询','/billquery/jdbillquery.jsp','icon-save')">占位一</a>
+						onclick="addTab('添加公寓','/apartment/addapartment.jsp','icon-save')">添加公寓</a>
 					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('公寓管理','/apartment/manageApartment.jsp','icon-save')">公寓管理</a>
+					</li>
+				</ul>
 
+			</div>
+			<div title="学生信息管理" data-options="iconCls:'icon-search'">
+				<ul id="nav">
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('增加学生','/billquery/jdbillquery.jsp','icon-save')">增加学生</a>
+					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('修改学生信息','/billquery/jdbillquery.jsp','icon-save')">修改学生信息</a>
+					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('删除学生','/billquery/jdbillquery.jsp','icon-save')">删除学生</a>
+					</li>
 
 
 				</ul>
 
 			</div>
-			<div title="管理二" data-options="iconCls:'icon-save'">
+			<div title="宿舍信息管理" data-options="iconCls:'icon-search'">
 				<ul id="nav">
 					<li><a class="easyui-linkbutton"
-						data-options="iconCls:'icon-save'" plain="false"
+						data-options="iconCls:'icon-search'" plain="false"
 						href="javascript:void(0);"
-						onclick="addTab('京东小银票查询','/billquery/jdbillquery.jsp','icon-save')">占位一</a>
+						onclick="addTab('增加宿舍','/billquery/jdbillquery.jsp','icon-save')">增加宿舍</a>
 					</li>
-
-
-
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('修改宿舍信息','/billquery/jdbillquery.jsp','icon-save')">修改宿舍信息</a>
+					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('删除宿舍信息','/billquery/jdbillquery.jsp','icon-save')">删除宿舍信息</a>
+					</li>
 				</ul>
 
 			</div>
+			<div title="宿舍财产管理" data-options="iconCls:'icon-search'">
+				<ul id="nav">
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('增加宿舍财产','/billquery/jdbillquery.jsp','icon-save')">增加宿舍财产</a>
+					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('修改宿舍财产','/billquery/jdbillquery.jsp','icon-save')">修改宿舍财产</a>
+					</li>
+					<li><a class="easyui-linkbutton"
+						data-options="iconCls:'icon-search'" plain="false"
+						href="javascript:void(0);"
+						onclick="addTab('删除宿舍财产','/billquery/jdbillquery.jsp','icon-save')">删除宿舍财产</a>
+					</li>
+				</ul>
 
-
+			</div>
 
 		</div>
 	</div>

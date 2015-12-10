@@ -29,9 +29,8 @@ function CheckPost() {
 				alert("Connection error");
 			},
 			success : function(data) {
-				alert(data);
 				if (data == null) {
-					alert("请输入正确的用户名和密码")
+					alert("请输入正确的用户名和密码");
 				} else {
 					window.location.href = "index.jsp";
 				}

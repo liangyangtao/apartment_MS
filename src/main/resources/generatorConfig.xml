@@ -16,10 +16,17 @@
 			targetProject="apartment_MS/src/main/java" type="XMLMAPPER" />
 
 
-		<table tableName="user" domainObjectName="User">
+		<table tableName="apartment" domainObjectName="Apartment">
 			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
 				identity="true" type="post" />
 		</table>
-
+		<table tableName="sushe" domainObjectName="ShuShe">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
+		<table tableName="student" domainObjectName="Student">
+			<generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
 	</context>
 </generatorConfiguration>

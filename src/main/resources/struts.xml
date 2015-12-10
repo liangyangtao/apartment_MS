@@ -48,4 +48,5 @@
 	</package>
 
 	<include file="struts-user.xml"></include>
+	<include file="struts-apart.xml"></include>
 </struts>    

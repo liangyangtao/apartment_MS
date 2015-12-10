@@ -85,7 +85,7 @@ function addTab(cname, curl, ciconCls) {
 								title : cname,
 								closable : true,
 								iconCls : ciconCls,
-								content : '<iframe  scrolling="auto" src="${pageContext.request.contextPath}'
+								content : '<iframe  scrolling="auto" src=".'
 										+ curl
 										+ '" frameborder="0" style="border:0;width:100%;height:99.4%;"></iframe>',
 								tools : [ {
@@ -114,4 +114,3 @@ function addTab(cname, curl, ciconCls) {
 		}
 	}
 }
-
