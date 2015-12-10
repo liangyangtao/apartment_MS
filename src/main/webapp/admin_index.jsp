@@ -18,8 +18,8 @@
 		userID = String.valueOf(httpSession.getAttribute("USER_ID"));
 		String permission = String.valueOf(httpSession
 				.getAttribute("PERMISSION"));
-		if ("ADMIN".equals(permission)) {
-			response.sendRedirect("admin_index.jsp");
+		if (!"ADMIN".equals(permission)) {
+			response.sendRedirect("index.jsp");
 		}
 
 	}
@@ -46,7 +46,6 @@
 <!-- 引入easyUi小图标 -->
 <link rel="stylesheet" type="text/css"
 	href="<%=path%>/v3/js/easyui/themes/icon.css" />
-
 <link rel="stylesheet" type="text/css" href="<%=path%>/v3/css/index.css" />
 <script type="text/javascript" src="<%=path%>/v3/js/index.js"
 	charset="utf-8"></script>
